@@ -1,4 +1,7 @@
 #pragma once
+
+#include "DateUtil.h"
+
 class Date
 {
 public:

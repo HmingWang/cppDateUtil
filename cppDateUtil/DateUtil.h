@@ -2,7 +2,7 @@
 
 #include "Date.h"
 
-class DateUtil
+static class DateUtil
 {
 public:
 	DateUtil();
@@ -16,7 +16,7 @@ public:
 	Date SubYear(const Date& date, int n);
 
 	bool IsLeapYear(int year);
-	int GetMonthDayNum(int month);
+	int GetMonthDayNum(int year,int month);
 	int Diff(const Date& date1, const Date& date2);
 	Date GetFirstDayOfMonth(const Date& date);
 	Date GetLastDayOfMonth(const Date& date);

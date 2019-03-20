@@ -23,9 +23,25 @@ Date::Date(const Date & date)
 	this->_day = date._day;
 }
 
-Date & Date::AddDay(int)
+Date & Date::AddDay(int n)
 {
-	// TODO: 在此处插入 return 语句
+	if (_day < 0)
+	{
+		return *this - (-_day);
+	}
+	Date tmpDate(*this);//拷贝this指针
+	tmpDate._day += n;
+	while (tmpDate._day > DateUtil:: (_year, _month))
+	{
+		tmpDate._day = tmpDate._day - GetDayByYearAndMonth(tmpDate._year, tmpDate._month);
+		tmpDate._month += 1;
+		if (tmpDate._month > 12)
+		{
+			++tmpDate._year;
+			tmpDate._month = 1;
+		}
+	}
+	return tmpDate;
 }
 
 Date & Date::SubDay(int)
@@ -71,9 +87,9 @@ bool Date::operator!=(const Date & date)
 	return this->_year!=date._year||this->_month!=date._month||this->_day!=date._day;
 }
 
-bool Date::operator==(const Date &)
+bool Date::operator==(const Date & date)
 {
-	return false;
+	return this->_year == date._year&&this->_month == date._month&&this->_day == date._day;
 }
 
 Date & Date::operator-=(const Date & date)

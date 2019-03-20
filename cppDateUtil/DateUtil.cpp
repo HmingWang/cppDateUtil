@@ -43,12 +43,21 @@ Date DateUtil::SubYear(const Date & date, int n)
 
 bool DateUtil::IsLeapYear(int year)
 {
-	return false;
+	return year % 100 == 0 ? year % 400 == 0 : year % 4 == 0;
 }
 
-int DateUtil::GetMonthDayNum(int month)
+int DateUtil::GetMonthDayNum(int year,int month)
 {
-	return 0;
+	int MonthDay[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	if (IsLeapYear(year) && month == 2)
+	{
+		return 29;
+	}
+	else 
+	{
+		return MonthDay[month];
+	}
+
 }
 
 int DateUtil::Diff(const Date & date1, const Date & date2)
