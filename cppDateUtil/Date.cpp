@@ -23,17 +23,30 @@ Date::Date(const Date & date)
 	this->_day = date._day;
 }
 
-Date & Date::AddDay(int n)
+
+Date Date::operator+(const Date &)
 {
-	if (_day < 0)
+	// TODO: 在此处插入 return 语句
+}
+
+Date Date::operator-(const Date &)
+{
+	// TODO: 在此处插入 return 语句
+	return *this;
+}
+
+Date Date::AddDay(int n)
+{
+	if (n < 0)
 	{
-		return *this - (-_day);
+		return *this - (-n);
 	}
 	Date tmpDate(*this);//拷贝this指针
+
 	tmpDate._day += n;
-	while (tmpDate._day > DateUtil:: (_year, _month))
+	while (tmpDate._day > DateUtil::GetMonthDayNum (_year, _month))
 	{
-		tmpDate._day = tmpDate._day - GetDayByYearAndMonth(tmpDate._year, tmpDate._month);
+		tmpDate._day = tmpDate._day - DateUtil::GetMonthDayNum(tmpDate._year, tmpDate._month);
 		tmpDate._month += 1;
 		if (tmpDate._month > 12)
 		{
@@ -44,27 +57,27 @@ Date & Date::AddDay(int n)
 	return tmpDate;
 }
 
-Date & Date::SubDay(int)
+Date Date::SubDay(int)
 {
 	// TODO: 在此处插入 return 语句
 }
 
-Date & Date::AddMonth(int)
+Date Date::AddMonth(int)
 {
 	// TODO: 在此处插入 return 语句
 }
 
-Date & Date::SubMonth(int)
+Date Date::SubMonth(int)
 {
 	// TODO: 在此处插入 return 语句
 }
 
-Date & Date::AddYear(int)
+Date Date::AddYear(int)
 {
 	// TODO: 在此处插入 return 语句
 }
 
-Date & Date::SubYear(int)
+Date Date::SubYear(int)
 {
 	// TODO: 在此处插入 return 语句
 }
@@ -103,15 +116,7 @@ Date & Date::operator+=(const Date &)
 	// TODO: 在此处插入 return 语句
 }
 
-Date & Date::operator+(const Date &)
-{
-	// TODO: 在此处插入 return 语句
-}
 
-Date & Date::operator-(const Date &)
-{
-	// TODO: 在此处插入 return 语句
-}
 
 
 Date::~Date()

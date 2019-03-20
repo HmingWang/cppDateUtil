@@ -16,7 +16,7 @@ public:
 	Date SubYear(const Date& date, int n);
 
 	bool IsLeapYear(int year);
-	int GetMonthDayNum(int year,int month);
+	static int GetMonthDayNum(int year,int month);
 	int Diff(const Date& date1, const Date& date2);
 	Date GetFirstDayOfMonth(const Date& date);
 	Date GetLastDayOfMonth(const Date& date);

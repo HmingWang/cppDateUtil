@@ -13,15 +13,17 @@ public:
 	Date();
 	Date(int year, int month, int day);
 	Date(const Date& date );
+	Date operator + (const Date&);
+	Date operator - (const Date&);
 
-	Date& AddDay(int);
-	Date& SubDay(int);
+	Date AddDay(int);
+	Date SubDay(int);
 
-	Date& AddMonth(int);
-	Date& SubMonth(int);
+	Date AddMonth(int);
+	Date SubMonth(int);
 
-	Date& AddYear(int);
-	Date& SubYear(int);
+	Date AddYear(int);
+	Date SubYear(int);
 
 	int Diff(const Date&);
 	Date& operator =(const Date&);
@@ -31,8 +33,7 @@ public:
 	Date& operator -= (const Date&);
 	Date& operator += (const Date&);
 
-	Date& operator + (const Date&);
-	Date& operator - (const Date&);
+
 
 
 	~Date();
