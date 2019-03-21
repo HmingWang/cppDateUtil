@@ -2,7 +2,7 @@
 
 #include "Date.h"
 
-static class DateUtil
+class DateUtil
 {
 public:
 	DateUtil();

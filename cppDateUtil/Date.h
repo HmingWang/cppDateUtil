@@ -13,8 +13,9 @@ public:
 	Date();
 	Date(int year, int month, int day);
 	Date(const Date& date );
-	Date operator + (const Date&);
-	Date operator - (const Date&);
+
+	Date operator + (int);
+	Date operator - (int);
 
 	Date AddDay(int);
 	Date SubDay(int);
@@ -32,9 +33,6 @@ public:
 	bool operator == (const Date&);
 	Date& operator -= (const Date&);
 	Date& operator += (const Date&);
-
-
-
 
 	~Date();
 };

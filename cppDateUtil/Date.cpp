@@ -24,12 +24,13 @@ Date::Date(const Date & date)
 }
 
 
-Date Date::operator+(const Date &)
+Date Date::operator+(int n)
 {
 	// TODO: 在此处插入 return 语句
+	return *this;
 }
 
-Date Date::operator-(const Date &)
+Date Date::operator-(int n)
 {
 	// TODO: 在此处插入 return 语句
 	return *this;
